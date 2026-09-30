@@ -1,6 +1,8 @@
 
 import { BrowserRouter, Link, Navigate, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
+import PostPage from './pages/PostPage'
+import AuthorPage from './pages/AuthorPage'
 import LoginPage from './pages/login'
 import CriarPostPage from './pages/criar-post'
 import './App.css'
@@ -21,6 +23,8 @@ function App() {
 
 			<Routes>
 				<Route path="/" element={<HomePage />} />
+				<Route path="/posts/:postId" element={<PostPage />} />
+				<Route path="/autores/:authorId" element={<AuthorPage />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/criar-post" element={<CriarPostPage />} />
 				<Route path="*" element={<Navigate to="/" replace />} />
