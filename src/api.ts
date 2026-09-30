@@ -29,6 +29,10 @@ export async function getPosts() {
   return (await api.get<Post[]>('/posts')).data
 }
 
+export async function createPost(post: Omit<Post, 'id'>) {
+  return (await api.post<Post>('/posts', post)).data
+}
+
 export async function getPost(id: number) {
   return (await api.get<Post>(`/posts/${id}`)).data
 }
